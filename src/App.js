@@ -1,23 +1,24 @@
 import { useSelector, useDispatch } from "react-redux";
+import {actions} from "../src/stores/counterStore"
 function App() {
   const counter = useSelector((state) => state.counter);
   const dispatch = useDispatch();
 
   const increment = () => {
-    dispatch({ type: "increment" });
+    dispatch(actions.increment());
   };
   const decrement = () => {
-    dispatch({ type: "decrement" });
+    dispatch(actions.decrement());
   };
   const reset = () => {
-    dispatch({ type: "reset",payload: 100 });
+    dispatch(actions.reset());
   };
   const addByTen = () => {
-    dispatch({ type: "addByTen" ,payload:10});
+    dispatch(actions.addByTen(10));
   };
 
   const subByTen = () => {
-    dispatch({ type: "subByTen", payload:10 });
+    dispatch(actions.subByTen(10));
   };
   return (
     <div className="App">
